@@ -1,7 +1,8 @@
-package com.federik.services;
+package com.federik.services.Impl;
 
 import com.federik.mapper.FederikUsersMapper;
 import com.federik.mapper.dto.UsersDto;
+import com.federik.services.FederikNetLoginModule;
 import com.federik.utils.CoreMD5;
 import org.springframework.stereotype.Service;
 

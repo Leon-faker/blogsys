@@ -5,13 +5,4 @@
     <select id="selectLoginUser" resultType="Integer" parameterType="com.federik.mapper.dto.UsersDto">
         SELECT COUNT(*) FROM federikusers WHERE net_user_username =#{netUserName}  AND net_user_password =#{netUserPassword}
     </select>
-
-    <update id="updatePassword" parameterType="com.federik.mapper.dto.UsersDto">
-        update federikusers
-        <trim prefix="set" prefixOverrides=",">
-            <if test="netUserName != null">net_user_username=#{netUserName}</if>
-            <if test="netUserPassword != null">net_user_password=#{netuserPassword}</if>
-        </trim>
-        where net_user_id = #{netUserId}
-    </update>
 </mapper>
