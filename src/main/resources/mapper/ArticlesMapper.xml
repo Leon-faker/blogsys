@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.federik.mapper.dto.Articles" >
     <id column="article_id" property="articleId" jdbcType="INTEGER" />
     <result column="article_name" property="articleName" jdbcType="VARCHAR" />
+    <result column="article_content" property="articleContent" jdbcType="VARCHAR" />
     <result column="article_author" property="articleAuthor" jdbcType="VARCHAR" />
     <result column="article_status" property="articleStatus" jdbcType="TINYINT" />
     <result column="article_like_num" property="articleLikeNum" jdbcType="INTEGER" />
@@ -12,7 +13,7 @@
     <result column="article_cr_time" property="articleCrTime" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    article_id, article_name, article_author, article_status, article_like_num, article_read_num, 
+    article_id, article_name,article_content, article_author, article_status, article_like_num, article_read_num,
     article_type_id, article_cr_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -48,6 +49,9 @@
       <if test="articleStatus != null" >
         article_status,
       </if>
+      <if test="articleContent != null">
+        article_content,
+      </if>
       <if test="articleLikeNum != null" >
         article_like_num,
       </if>
@@ -73,6 +77,9 @@
       </if>
       <if test="articleStatus != null" >
         #{articleStatus,jdbcType=TINYINT},
+      </if>
+      <if test="articleContent != null">
+        #{articleContent,jdbcType=VARCHAR},
       </if>
       <if test="articleLikeNum != null" >
         #{articleLikeNum,jdbcType=INTEGER},
@@ -126,4 +133,10 @@
       article_cr_time = #{articleCrTime,jdbcType=VARCHAR}
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAll" resultType="com.federik.mapper.dto.Articles">
+    select
+    <include refid="Base_Column_List" />
+    from net_articles #{offset},#{limit}
+  </select>
 </mapper>

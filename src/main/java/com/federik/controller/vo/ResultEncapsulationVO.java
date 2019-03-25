@@ -8,7 +8,7 @@ public class ResultEncapsulationVO <T>{
 
     private Long resultCode;
 
-    private List<T> data;
+    private T data;
 
     private String strDescribe;
 
@@ -20,11 +20,11 @@ public class ResultEncapsulationVO <T>{
         this.resultCode = resultCode;
     }
 
-    public List<T> getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(List<T> data) {
+    public void setData(T data) {
         this.data = data;
     }
 

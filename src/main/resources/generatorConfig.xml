@@ -25,7 +25,7 @@
                              targetProject="src/main/java" type="XMLMAPPER" />
 
         <!-- 数据库表 以及是否生成example-->
-        <table  tableName="net_articles" domainObjectName="Articles"
+        <table  tableName="net_article_type" domainObjectName="ArticleType"
                 enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
                 enableSelectByExample="false" selectByExampleQueryId="false" >
             <!-- 设置别名 -->

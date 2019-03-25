@@ -7,6 +7,8 @@ public class Articles {
 
     private String articleAuthor;
 
+    private String articleContent;
+
     private Byte articleStatus;
 
     private Integer articleLikeNum;
@@ -79,5 +81,13 @@ public class Articles {
 
     public void setArticleCrTime(String articleCrTime) {
         this.articleCrTime = articleCrTime;
+    }
+
+    public String getArticleContent() {
+        return articleContent;
+    }
+
+    public void setArticleContent(String articleContent) {
+        this.articleContent = articleContent;
     }
 }
