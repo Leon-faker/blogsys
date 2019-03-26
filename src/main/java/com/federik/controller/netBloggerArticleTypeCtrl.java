@@ -1,5 +1,6 @@
 package com.federik.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.federik.controller.vo.ResultEncapsulationVO;
 import com.federik.mapper.dto.ArticleType;
 import com.federik.mapper.dto.Articles;
@@ -22,6 +23,7 @@ public class netBloggerArticleTypeCtrl {
     @ResponseBody
     public String addArticle(@RequestParam(value="offset") Long offset,@RequestParam(value = "limit") Long limit){
         List<ArticleType> articleTypelst = federikArticleTypeService.findAll(offset,limit);
+        System.out.println(JSON.toJSONString(articleTypelst));
         ResultEncapsulationVO<List<ArticleType>> resultEncapsulationVO = new ResultEncapsulationVO<>();
         resultEncapsulationVO.setData(articleTypelst);
         resultEncapsulationVO.setResultCode(1L);

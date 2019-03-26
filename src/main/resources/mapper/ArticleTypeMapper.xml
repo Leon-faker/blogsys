@@ -69,10 +69,10 @@
     where article_type_id = #{articleTypeId,jdbcType=INTEGER}
   </update>
 
-  <select id="findAll" resultType="com.federik.mapper.dto.ArticleType">
+  <select id="findAll" parameterType="long" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from net_article_type LIMIT
+    from net_article_type
     <if test="offset != null and limit != 0">
       LIMIT #{offset},#{limit}
     </if>

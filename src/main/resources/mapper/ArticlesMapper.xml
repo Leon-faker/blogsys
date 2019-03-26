@@ -134,9 +134,12 @@
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
 
-  <select id="selectAll" resultType="com.federik.mapper.dto.Articles">
+  <select id="selectAll" parameterType="long" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from net_articles #{offset},#{limit}
+    from net_articles
+    <if test="offset != null and limit != 0">
+      LIMIT #{offset},#{limit}
+    </if>
   </select>
 </mapper>
