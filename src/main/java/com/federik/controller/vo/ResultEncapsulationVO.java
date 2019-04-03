@@ -16,24 +16,35 @@ public class ResultEncapsulationVO <T>{
         return resultCode;
     }
 
-    public void setResultCode(Long resultCode) {
+    public static <T> ResultEncapsulationVO<T> success(String str){
+        return (new ResultEncapsulationVO<>()).setResultCode(SystemEnum.ResultEnum.success.getResultCode()).setStrDescribe(str);
+    }
+
+    public static <T> ResultEncapsulationVO<T> fail(String str){
+        return (new ResultEncapsulationVO<>()).setResultCode(SystemEnum.ResultEnum.fail.getResultCode()).setStrDescribe(str);
+    }
+
+    public ResultEncapsulationVO setResultCode(Long resultCode) {
         this.resultCode = resultCode;
+        return this;
     }
 
     public T getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public ResultEncapsulationVO setData(T data) {
         this.data = data;
+        return this;
     }
 
     public String getStrDescribe() {
         return strDescribe;
     }
 
-    public void setStrDescribe(String strDescribe) {
+    public ResultEncapsulationVO setStrDescribe(String strDescribe) {
         this.strDescribe = strDescribe;
+        return this;
     }
 
     public String toString(){

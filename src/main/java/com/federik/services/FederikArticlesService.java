@@ -1,5 +1,6 @@
 package com.federik.services;
 
+import com.federik.controller.vo.ResultEncapsulationVO;
 import com.federik.mapper.dto.Articles;
 
 import java.util.List;
@@ -15,25 +16,25 @@ public interface FederikArticlesService {
      * @param articles 文章模型
      * @return
      */
-    int addArticle(Articles articles);
+    ResultEncapsulationVO addArticle(Articles articles);
 
     /**
      *  删除文章
      * @param id 文章id
      * @return
      */
-    int delArticle(Integer id);
+    ResultEncapsulationVO delArticle(Integer id);
 
     /**
      * 修改文章
      * @param articles 文章模型
      * @return
      */
-    int updateArticle(Articles articles);
+    ResultEncapsulationVO updateArticle(Articles articles);
 
     /**
      * 查询文章列表
      * @return
      */
-    List<Articles> findArticleLst(Long offset,Long limit);
+    ResultEncapsulationVO findArticleLst(Long offset,Long limit);
 }

@@ -6,7 +6,7 @@ public class SystemEnum {
 
     public static enum  ResultEnum{
         reulstPID("首序列号",90L),loginFail("登录失败",91L),usernameOrPasswordError("用户名或者密码错误",92L),
-        loginSuccessful("登录成功",93L),userInvalid("用户未登录",94L);
+        loginSuccessful("登录成功",93L),userInvalid("用户未登录",94L),success("操作成功",200L),fail("操作失败",-100L);
 
         ResultEnum(String describe,Long code){
             this.strDescribe = describe;

@@ -1,5 +1,6 @@
 package com.federik.services;
 
+import com.federik.controller.vo.ResultEncapsulationVO;
 import com.federik.mapper.dto.ArticleType;
 
 import java.util.List;
@@ -15,5 +16,5 @@ public interface FederikArticleTypeService {
      * @param limit
      * @return
      */
-    List<ArticleType> findAll(Long offset,Long limit);
+    ResultEncapsulationVO findAll(Long offset, Long limit);
 }

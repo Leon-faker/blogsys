@@ -9,7 +9,7 @@ public class Articles {
 
     private String articleContent;
 
-    private Byte articleStatus;
+    private Boolean articleStatus;
 
     private Integer articleLikeNum;
 
@@ -43,11 +43,11 @@ public class Articles {
         this.articleAuthor = articleAuthor;
     }
 
-    public Byte getArticleStatus() {
+    public Boolean getArticleStatus() {
         return articleStatus;
     }
 
-    public void setArticleStatus(Byte articleStatus) {
+    public void setArticleStatus(Boolean articleStatus) {
         this.articleStatus = articleStatus;
     }
 
