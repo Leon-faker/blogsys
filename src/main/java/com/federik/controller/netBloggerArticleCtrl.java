@@ -19,7 +19,7 @@ public class netBloggerArticleCtrl {
     @Resource
     private FederikArticlesService federikArticlesService;
 
-    @PostMapping(value = "addArticle")
+    @PostMapping(value = "/addArticle")
     @ResponseBody
     public String addArticle(@RequestBody Articles articles){
         articles.setArticleCrTime(new SimpleDateFormat("yyyy-mm-dd HH:mm:ss").format(new Date()));
@@ -34,11 +34,11 @@ public class netBloggerArticleCtrl {
     }
 
     /**
-     * 修改可见状态
+     * 修改文章
      * @param articles
      * @return
      */
-    @PostMapping(value = "/updateStatus")
+    @PostMapping(value = "/updateArticle")
     @ResponseBody
     public String updateStatus(@RequestBody Articles articles){
         log.info("文章修改,请求参数:" + JSON.toJSONString(articles));

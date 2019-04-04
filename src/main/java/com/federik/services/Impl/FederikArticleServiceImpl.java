@@ -51,7 +51,7 @@ public class FederikArticleServiceImpl implements FederikArticlesService {
 
     @Override
     public ResultEncapsulationVO updateArticle(Articles articles) {
-        log.info(JSON.toJSONString(articles));
+        log.info(""+articles.getArticleStatus());
         try {
             if (Objects.isNull(articles)) {
                 return ResultEncapsulationVO.fail("参数异常");
@@ -64,19 +64,23 @@ public class FederikArticleServiceImpl implements FederikArticlesService {
             if(CommUtils.isNull(sourceArticle)) {
                 return  ResultEncapsulationVO.fail("未查询到内容");
             }
-            if(CommUtils.isNull(articles.getArticleName())){
+            if(!CommUtils.isNull(articles.getArticleName())){
                 sourceArticle.setArticleName(articles.getArticleName());
             }
 
-            if(CommUtils.isNull(articles.getArticleId())){
+            if(!CommUtils.isNull(articles.getArticleTypeId())){
+                sourceArticle.setArticleTypeId(articles.getArticleTypeId());
+            }
+
+            if(!CommUtils.isNull(articles.getArticleId())){
                 sourceArticle.setArticleId(articles.getArticleId());
             }
 
-            if(CommUtils.isNull(articles.getArticleStatus())){
+            if(!CommUtils.isNull(articles.getArticleStatus())){
                 sourceArticle.setArticleStatus(articles.getArticleStatus());
             }
 
-            if(CommUtils.isNull(articles.getArticleContent())){
+            if(!CommUtils.isNull(articles.getArticleContent())){
                 sourceArticle.setArticleContent(articles.getArticleContent());
             }
 
