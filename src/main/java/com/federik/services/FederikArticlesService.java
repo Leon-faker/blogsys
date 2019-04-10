@@ -1,9 +1,7 @@
 package com.federik.services;
 
 import com.federik.controller.vo.ResultEncapsulationVO;
-import com.federik.mapper.dto.Articles;
-
-import java.util.List;
+import com.federik.mapper.dto.articles;
 
 /**
  * 文章管理模块
@@ -16,7 +14,7 @@ public interface FederikArticlesService {
      * @param articles 文章模型
      * @return
      */
-    ResultEncapsulationVO addArticle(Articles articles);
+    ResultEncapsulationVO addArticle(articles articles);
 
     /**
      *  删除文章
@@ -30,7 +28,7 @@ public interface FederikArticlesService {
      * @param articles 文章模型
      * @return
      */
-    ResultEncapsulationVO updateArticle(Articles articles);
+    ResultEncapsulationVO updateArticle(articles articles);
 
     /**
      * 查询文章列表

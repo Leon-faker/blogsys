@@ -13,9 +13,6 @@ public class PersonalFederikInterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(personalFederkInterceptor).addPathPatterns("/**").excludePathPatterns("/federik/loginuser","/federik/invaliduser");
+        registry.addInterceptor(personalFederkInterceptor).addPathPatterns("/**").excludePathPatterns("/federik/loginuser","/federik/invaliduser","/federik/checkLogin");
     }
-
-
-
 }

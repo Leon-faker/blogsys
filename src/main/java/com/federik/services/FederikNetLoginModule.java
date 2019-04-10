@@ -1,7 +1,7 @@
 package com.federik.services;
 
 import com.federik.controller.vo.ResultEncapsulationVO;
-import com.federik.mapper.dto.UsersDto;
+import com.federik.mapper.dto.users;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,5 +14,5 @@ public interface FederikNetLoginModule {
      * @param usersDto 用户model
      * @return > true 登录成功 ， false 登录失败
      */
-    ResultEncapsulationVO processUserLoginRequest(UsersDto usersDto, HttpServletRequest request);
+    ResultEncapsulationVO processUserLoginRequest(users usersDto, HttpServletRequest request);
 }
